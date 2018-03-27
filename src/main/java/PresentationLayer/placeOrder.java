@@ -10,6 +10,9 @@ public class placeOrder extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
+        
+        
         return "customerOrder";
 
     }
+}
