@@ -41,7 +41,5 @@ public class Bricks {
     public String toString() {
         return "Bricks{" + "four=" + four + ", two=" + two + ", one=" + one + '}';
     }
-
-    
     
 }

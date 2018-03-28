@@ -7,14 +7,17 @@
     </head>
     <body>
         <%@include file="../includes/menu.jsp" %>
-        <h1>your order!</h1>
-        <p>your length ${l}</p>
-        <p>your width ${w}</p>
-        <p>your height ${h}</p>
-        
-        <p><%=  request.getAttribute("bricks") %></p>
+        <h1>Hello World!</h1>
+        <p>your length ${length}</p>
+        <p>your Width ${width}</p>
+        <p>your Height ${height}</p>
 
-        <a href="index.jsp">Click here to go back home</a>
+        <%= request.getAttribute("bricks")%>
+
+        <form name="confirmOrder" action="FrontController" method="post">
+            <input type="hidden" name="command" value="confirmOrder">
+            <input type="submit" name="submit" />
+        </form>
     </body>
 </html>
 

@@ -3,14 +3,32 @@ package FunctionLayer;
 
 
 public class Order {
+    private int id;
     private int width;
     private int length;
     private int height;
+    private String status;
 
-    public  Order(int width, int length, int height) {
+    public Order(int id, int width, int length, int height, String status) {
+        this.id = id;
         this.width = width;
         this.length = length;
         this.height = height;
+        this.status = status;
+    }
+     public Order(int width, int length, int height) {
+         
+        this.width = width;
+        this.length = length;
+        this.height = height;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getWidth() {
@@ -37,11 +55,17 @@ public class Order {
         this.height = height;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" + "2x4=" + width + ", 2x2=" + length + ", 2x1=" + height + '}';
+    public String getStatus() {
+        return status;
     }
 
-   
-    
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" + "id=" + id + ", width=" + width + ", length=" + length + ", height=" + height + ", status=" + status + '}';
+    }
+
 }

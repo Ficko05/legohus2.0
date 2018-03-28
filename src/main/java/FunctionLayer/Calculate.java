@@ -5,6 +5,8 @@ import java.awt.List;
 
 public class Calculate {
 
+   
+
     public static Bricks orderCalculator(Order order)  {
         int w = order.getWidth();
         int l = order.getLength();
@@ -13,7 +15,7 @@ public class Calculate {
         int two = 0;
         int one = 0;
 
-        if (l < 6 || w < 6 || h > 1) {
+        if (w < 6 || l < 6 || h > 1) {
             System.out.println("to small");
         }
 
@@ -26,12 +28,12 @@ public class Calculate {
             one += 1;
         }
 
-        four = (((l * 2) + (w * 2) - (4 * 2)) / 4)* h;
+        four = (((l * 2) + (w * 2) - (4 * 2)) / 4) *h;
         int cal = ((l * 2) + (w * 2) - (4 * 2)) % 4;
 
         if (cal == 2) {
             two += 1;
-        } 
+        }
 
         Bricks bricks = new Bricks(four, two, one);
         return bricks;

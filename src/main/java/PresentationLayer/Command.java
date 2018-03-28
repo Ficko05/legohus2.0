@@ -2,6 +2,7 @@ package PresentationLayer;
 
 import FunctionLayer.Calculate;
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.OrderException;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +16,9 @@ abstract class Command {
         commands.put( "login", new Login() );
         commands.put( "register", new Register() );
         commands.put("calculate_bricks", new Calculator() );
-        commands.put("place_order", new placeOrder());
+        commands.put("registerOrder", new RegisterOrder());
+        commands.put("createOrder", new createOrder());
+        commands.put( "confirmOrder", new confirmOrder() );
     }
 
     static Command from( HttpServletRequest request ) {
@@ -27,6 +30,6 @@ abstract class Command {
     }
 
     abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
-            throws LoginSampleException;
+            throws LoginSampleException, OrderException;
 
 }
